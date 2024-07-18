@@ -103,7 +103,7 @@ if __name__ == '__main__':
             df_profit['old_rev'] = old_iter_rev
             df_profit['new_rev'] = new_iter_rev
 
-            df_profit.to_csv(f'./{case_num}/{date}/{date}_profit_profile.csv', index=False, header=True)
+            df_profit.to_csv(f'./Urban_level/{case_num}/{date}/{date}_profit_profile.csv', index=False, header=True)
 
             df_cost = pd.DataFrame()
             df_cost['old_cost'] = old_iter_cost
@@ -111,12 +111,12 @@ if __name__ == '__main__':
             df_cost['old_load'] = old_iter_loads
             df_cost['new_load'] = new_iter_loads
 
-            df_cost.to_csv(f'./{case_num}/{date}/{date}_cost_profile.csv', index=False, header=True)
+            df_cost.to_csv(f'./Urban_level/{case_num}/{date}/{date}_cost_profile.csv', index=False, header=True)
 
             df_co2 = pd.DataFrame()
             df_co2['co2'] = co2_change_lst
 
-            df_co2.to_csv(f'./{case_num}/{date}/{date}_co2_profile.csv', index=False, header=True)
+            df_co2.to_csv(f'./Urban_level/{case_num}/{date}/{date}_co2_profile.csv', index=False, header=True)
 
     print(f'Finish All! Time use {round(time.time() - t_start, 2)} s')
 

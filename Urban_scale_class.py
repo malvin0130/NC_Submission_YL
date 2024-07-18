@@ -116,12 +116,12 @@ class UrbanScaleSimulation:
 
         df_day['Price'] = self.rate
 
-        save_path = r"C:\apps-su\Yuewei\EV_Opt_E+\7.14_df_day"
+        save_path = r"C:\apps-su\Yuewei\EV_Opt_E+\df_day"
 
         if not os.path.exists(os.path.join(save_path, self.date, self.bldg_num)):
             os.makedirs(os.path.join(save_path, self.date, self.bldg_num))
 
-        df_day.to_csv(f'./7.14_df_day/{self.date}/{self.bldg_num}/df_day.csv', header=True, index=False)
+        df_day.to_csv(f'./df_day/{self.date}/{self.bldg_num}/df_day.csv', header=True, index=False)
 
         return df_day
 
@@ -281,10 +281,10 @@ class UrbanScaleSimulation:
 
         df_2['EV_sch'] = occ
 
-        if not os.path.exists(os.path.join(self.case_num, self.date, self.bldg_num)):
-            os.makedirs(os.path.join(self.case_num, self.date, self.bldg_num))
+        if not os.path.exists(os.path.join('Urban_level', self.case_num, self.date, self.bldg_num)):
+            os.makedirs(os.path.join('Urban_level', self.case_num, self.date, self.bldg_num))
 
-        df_2.to_csv(f'./{self.case_num}/{self.date}/{self.bldg_num}/{self.bldg_num}_iteration{self.iteration}_profile.csv',
+        df_2.to_csv(f'./Urban_level/{self.case_num}/{self.date}/{self.bldg_num}/{self.bldg_num}_iteration{self.iteration}_profile.csv',
                     index=False, header=True)
 
 
@@ -305,7 +305,7 @@ class UrbanLevelGrid:
         # self.grid_main()
 
     def get_load(self, bldg_):
-        df_load_ = pd.read_csv(f'./{self.case_num}/{self.date}/{bldg_}/{bldg_}_iteration{self.iteration}_profile.csv')
+        df_load_ = pd.read_csv(f'./Urban_level/{self.case_num}/{self.date}/{bldg_}/{bldg_}_iteration{self.iteration}_profile.csv')
         loads = pd.DataFrame(df_load_['Optimized load'])
         old_load = pd.DataFrame(df_load_['Measured load'])
 
