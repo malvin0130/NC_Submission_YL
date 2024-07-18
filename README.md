@@ -4,5 +4,5 @@ Codes that are central to the main framework for community and urban level studi
 
 ## Usage
 
-[Example_files](example_files) contains example input files for the framework. Please download the entire repo and rename the path for saving output files before running the main scripts.
+Folder 'Example_files' contains example input files for the framework. Please download the entire repo and rename the path for saving output files before running the main scripts.
 
